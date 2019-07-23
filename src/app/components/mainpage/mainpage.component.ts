@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-mainpage',
@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mainpage.component.scss']
 })
 export class MainpageComponent implements OnInit {
+  opened: boolean;
+  showSidenav = false;
+  @ViewChild('sidenav') sidenav:any;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleSidenav()
+  {
+    this.sidenav.toggle();
+    this.showSidenav = !this.showSidenav;
   }
 
 }

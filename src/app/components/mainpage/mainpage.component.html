@@ -6,5 +6,50 @@
 3.  
 
 -->
-<router-outlet></router-outlet>
 
+
+<!-- <div row>
+  <div column>
+    <div row space-between>
+      toolbar
+      <div 10>
+      menu icon 
+      </div>
+      <div 75></div>
+      <div 10></div>
+    </div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+
+
+
+
+
+<router-outlet></router-outlet> -->
+
+<div fxLayout="column wrap" fxLayoutAlign="  none" fxShow="true" fxHide="false">
+  <mat-toolbar [ngStyle.xs]="{'height':'64px'}" class="home-toolbar ">
+    <div fxLayout="row wrap" fxFlex="50" fxLayoutAlign="start start" fxShow="true" fxHide="false">
+      <mat-icon style="cursor:pointer" class="material-icons icon-color-white" (click)="toggleSidenav()">
+        {{showSidenav ? 'clear':'menu'}}
+      </mat-icon>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container fullscreen="" style="margin-top:64px">
+    <mat-sidenav class="padding-1em box-shadow home-toolbar " #sidenav mode="side">
+      <div fxLayout="column" fxLayoutGap="1em">
+        <button mat-stroked-button [disableRipple]="true" class="menu-buttons"><i class="material-icons menu-icons">home</i>Home</button>
+        <button mat-stroked-button [disableRipple]="true" class="menu-buttons"><i class="material-icons menu-icons">settings</i>Setting</button>
+        <button mat-stroked-button [disableRipple]="true" class="menu-buttons"><i class="material-icons menu-icons">person</i>Profile</button>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="padding-1em">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <div fxLayout="row">
+  </div>
+</div>

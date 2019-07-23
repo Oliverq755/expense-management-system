@@ -1,1 +1,102 @@
-<button mat-raised-button color="primary">Primary</button>
+<div fxLayout="column" fxLayoutGap="1em">
+  <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxFlex="40">
+      <mat-card class="box-shadow">
+        <div fxLayout="column">
+          <h4 class="margin-0 card-heading-padding heading-background-color" fxLayoutAlign="center center">Budget
+            Overview</h4>
+          <div fxFlex="100" fxLayout="row" class="padding-1em">
+            <div fxFlex="100" fxLayoutAlign="start center">
+              <img class="graph-image-height" src="https://bit.ly/2Y48Pjr">
+            </div>
+            <div fxFlex="40" fxLayoutGap="10px" fxLayoutAlign="center start" fxLayout="column">
+              <div fxLayout="column" fxLayoutGap="10px">
+                <span class="heading-color"><strong>Total Budget</strong></span>
+                <span><strong class="heading-color">Rs. </strong>{{totalBudget}}</span>
+              </div>
+              <div fxLayout="column" fxLayoutGap="5px">
+                <span class="heading-color"><strong>Total Expenses</strong></span>
+                <span><strong class="heading-color">Rs. </strong>{{totalExpenses}}</span>
+              </div>
+              <div fxLayout="column" fxLayoutGap="5px">
+                <span class="heading-color"><strong>Current Balance</strong></span>
+                <span><strong class="heading-color">Rs. </strong>{{currentBalance}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex="40">
+      <mat-card class="box-shadow">
+        <div fxLayout="column">
+          <h4 class="margin-0 card-heading-padding heading-background-color" fxLayoutAlign="center center">Budget
+            Overview</h4>
+          <div fxFlex="100" fxLayout="row" class="padding-1em">
+            <div fxFlex="100" fxLayoutAlign="start center">
+              <img class="graph-image-height" src="https://bit.ly/2Z2fW8o">
+            </div>
+            <div fxFlex="40" fxLayoutGap="10px" fxLayoutAlign="center start" fxLayout="column">
+              <div fxLayout="column" fxLayoutGap="10px">
+                <span class="heading-color"><strong>Total Budget</strong></span>
+                <span><strong class="heading-color">Rs. </strong>{{totalBudget}}</span>
+              </div>
+              <div fxLayout="column" fxLayoutGap="5px">
+                <span class="heading-color"><strong>Total Expenses</strong></span>
+                <span><strong class="heading-color">Rs. </strong>{{totalExpenses}}</span>
+              </div>
+              <div fxLayout="column" fxLayoutGap="5px">
+                <span class="heading-color"><strong>Current Balance</strong></span>
+                <span><strong class="heading-color">Rs. </strong>{{currentBalance}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <div>
+    <button mat-raised-button class="background-white" (click)="addExpenses()"><i class="material-icons">add</i>Add Expenses</button>
+  </div>
+  <!-- EXPENSE DETAILS -->
+  <div>
+    <table mat-table [dataSource]="dataSource">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="editIcon">
+        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <td mat-cell *matCellDef="let element"><i class="material-icons cursor-pointer">edit</i></td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef> Category </th>
+          <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+        </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="itemName">
+        <th mat-header-cell *matHeaderCellDef> Item name </th>
+        <td mat-cell *matCellDef="let element"> {{element.itemName}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef> Amount </th>
+        <td mat-cell *matCellDef="let element"> {{element.amount | currency}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="expenseDate">
+        <th mat-header-cell *matHeaderCellDef> Expense date </th>
+        <td mat-cell *matCellDef="let element"> {{element.expenseDate}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row class="expense-table-row" *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+
+</div>
