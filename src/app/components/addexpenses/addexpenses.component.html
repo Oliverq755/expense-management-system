@@ -1,3 +1,33 @@
-<p>
-  addexpenses works!
-</p>
+<div fxLayout="column">
+  <form [formGroup]="addExpenseForm">
+    <div fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="10px">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <h2 class="add-expense-heading primary-font-color">Add Expense Data</h2>
+      </div>
+      <mat-form-field appearance="outline">
+        <mat-label>Expense Category</mat-label>
+        <input matInput formControlName="EXPENSE_CATEGORY" placeholder="Expense category">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Item name</mat-label>
+        <input matInput formControlName="EXPENSE_ITEM_NAME" placeholder="Item name">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Amount</mat-label>
+        <input matInput formControlName="EXPENSE_AMOUNT" placeholder="Amount">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput formControlName="EXPENSE_DATE" [matDatepicker]="exp_date" readonly (click)="exp_date.open()"
+          placeholder="Choose the expense date">
+        <mat-datepicker-toggle matSuffix [for]="exp_date"></mat-datepicker-toggle>
+        <mat-datepicker #exp_date></mat-datepicker>
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <button mat-raised-button class="background-white button-padding-width button-padding-width" (click)="addExpenses(addExpenseForm)"><i
+            class="material-icons">add</i>Add Expenses</button>
+        <button mat-raised-button class="background-white button-padding-width button-padding-width" (click)="addExpenses()"><i
+            class="material-icons">clear</i>Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

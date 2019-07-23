@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
 
   addExpenses(){
       const dialogRef = this.dialog.open(AddexpensesComponent, {
-        width: '60%',height:'40%',
+        width: '35%',
         // data: {name: this.cityName}
       });
     }

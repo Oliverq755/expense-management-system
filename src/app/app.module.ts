@@ -35,6 +35,7 @@ import {
   MatTreeModule,
   MatFormFieldModule
 } from '@angular/material';
+import { FormsModule, ReactiveFormsModule }         from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -85,7 +86,9 @@ import { AddexpensesComponent } from './components/addexpenses/addexpenses.compo
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   entryComponents: [AddexpensesComponent],
