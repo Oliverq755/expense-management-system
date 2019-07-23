@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-mainpage',
@@ -6,11 +7,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./mainpage.component.scss']
 })
 export class MainpageComponent implements OnInit {
-  opened: boolean;
   showSidenav = false;
   @ViewChild('sidenav') sidenav:any;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
@@ -19,6 +21,10 @@ export class MainpageComponent implements OnInit {
   {
     this.sidenav.toggle();
     this.showSidenav = !this.showSidenav;
+  }
+
+  routeDashboardPage(){
+    this.router.navigate(['home/dashboard']);
   }
 
 }
