@@ -8,7 +8,7 @@
           <mat-form-field appearance="outline" class="custom-input-field">
             <input matInput [(ngModel)]="budget"placeholder="Total Budget">
           </mat-form-field>
-          <button mat-raised-button class="background-white button-padding-width" (click)="updateBudget(budget)">
+          <button mat-raised-button [disabled]="budget==null" class="background-white button-padding-width" (click)="updateBudget(budget)">
             <i class="material-icons">monetization_on</i>Update Budget</button>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1em">
@@ -16,7 +16,7 @@
           <mat-form-field appearance="outline" class="custom-input-field">
             <input matInput [(ngModel)]="newCategory" placeholder="Add new category">
           </mat-form-field>
-          <button mat-raised-button class="background-white button-padding-width" (click)="addNewCategory(newCategory)">
+          <button mat-raised-button [disabled]="newCategory==null" class="background-white button-padding-width" (click)="addNewCategory(newCategory)">
             <i class="material-icons">add</i>Category</button>
         </div>
       </div>

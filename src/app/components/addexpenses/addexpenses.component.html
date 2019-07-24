@@ -23,10 +23,8 @@
         <mat-datepicker #exp_date></mat-datepicker>
       </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="space-between center">
-        <button mat-raised-button class="background-white button-padding-width button-padding-width" (click)="addExpenses(addExpenseForm)"><i
+        <button mat-raised-button [disabled]="addExpenseForm.status=='INVALID'" class="background-white button-padding-width button-padding-width" (click)="addExpenses(addExpenseForm)"><i
             class="material-icons">add</i>Add Expenses</button>
-        <button mat-raised-button class="background-white button-padding-width button-padding-width" (click)="addExpenses()"><i
-            class="material-icons">clear</i>Cancel</button>
       </div>
     </div>
   </form>
