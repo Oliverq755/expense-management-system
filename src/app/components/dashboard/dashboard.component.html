@@ -38,7 +38,7 @@
             Overview</h4>
           <div fxFlex="100" fxLayout="row" class="padding-1em">
             <div fxFlex="100" fxLayoutAlign="start center">
-                <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+              <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
                 [outerStrokeColor]="'#FF6347'" [innerStrokeColor]="'#32CD32'" [animation]="true"
                 [animationDuration]="600"></circle-progress>
             </div>
@@ -65,6 +65,8 @@
     <button mat-raised-button class="background-white button-padding-width" (click)="addExpenses()"><i
         class="material-icons">add</i>Add Expenses</button>
   </div>
+  <marquee class="notice-marquee">Chance the ROUTES using the sidenave button to check the result of API result (AFTER ADDING EXPENSE). API called, are not behavioural Subject Instance</marquee>
+
   <!-- EXPENSE DETAILS -->
   <div>
     <table mat-table [dataSource]="dataSource">
