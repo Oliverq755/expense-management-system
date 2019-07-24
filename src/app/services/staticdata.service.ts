@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class StaticdataService {
 
-  expenseDetails = [
+  // expenseDetails:any;
+  expenseDetails:any = [
     {category:'Grocery',itemName:'Bread',amount:500,expenseDate:'9/12/2019'},
     {category:'Cloths',itemName:'Jeans',amount:1500,expenseDate:'9/12/2019'},
     {category:'Juice',itemName:'Apple',amount:5100,expenseDate:'9/12/2019'},

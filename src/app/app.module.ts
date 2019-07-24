@@ -44,6 +44,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddexpensesComponent } from './components/addexpenses/addexpenses.component';
 import { from } from 'rxjs';
 import { ExpenseSettingComponent } from './components/expense-setting/expense-setting.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,9 @@ import { ExpenseSettingComponent } from './components/expense-setting/expense-se
     MatTreeModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule, 
+    // HttpClient
   ],
   providers: [],
   entryComponents: [AddexpensesComponent],
