@@ -45,6 +45,7 @@ import { AddexpensesComponent } from './components/addexpenses/addexpenses.compo
 import { from } from 'rxjs';
 import { ExpenseSettingComponent } from './components/expense-setting/expense-setting.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule, 
-    // HttpClient
+    NgCircleProgressModule.forRoot()
   ],
   providers: [],
   entryComponents: [AddexpensesComponent],

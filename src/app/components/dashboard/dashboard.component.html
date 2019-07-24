@@ -7,9 +7,13 @@
             Overview</h4>
           <div fxFlex="100" fxLayout="row" class="padding-1em">
             <div fxFlex="100" fxLayoutAlign="start center">
-              <img class="graph-image-height" src="https://bit.ly/2Y48Pjr"  matTooltip="Swimlane Graph Need to Integrate">
+              <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+                [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true"
+                [animationDuration]="600"></circle-progress>
+              <!-- <img class="graph-image-height" src="https://bit.ly/2Y48Pjr"  matTooltip="Swimlane Graph Need to Integrate"> -->
             </div>
-            <div fxFlex="40" class="primary-font-color" fxLayoutGap="10px" fxLayoutAlign="center start" fxLayout="column">
+            <div fxFlex="40" class="primary-font-color" fxLayoutGap="10px" fxLayoutAlign="center start"
+              fxLayout="column">
               <div fxLayout="column" fxLayoutGap="10px">
                 <span><strong>Total Budget</strong></span>
                 <span><strong>Rs. </strong>{{staticData.totalBudget}}</span>
@@ -30,24 +34,26 @@
     <div fxFlex="40">
       <mat-card class="box-shadow">
         <div fxLayout="column">
-          <h4 class="margin-0 card-heading-padding heading-background-color" fxLayoutAlign="center center">Budget
+          <h4 class="margin-0 card-heading-padding heading-background-color" fxLayoutAlign="center center">Category
             Overview</h4>
           <div fxFlex="100" fxLayout="row" class="padding-1em">
             <div fxFlex="100" fxLayoutAlign="start center">
-              <img class="graph-image-height" src="https://bit.ly/2Z2fW8o" matTooltip="Swimlane Graph Need to Integrate">
+                <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+                [outerStrokeColor]="'#FF6347'" [innerStrokeColor]="'#32CD32'" [animation]="true"
+                [animationDuration]="600"></circle-progress>
             </div>
-            <div fxFlex="40" class="primary-font-color" fxLayoutGap="10px" fxLayoutAlign="center start" fxLayout="column">
+            <div fxFlex="40" class="primary-font-color" fxLayoutGap="10px" fxLayoutAlign="center start"
+              fxLayout="column">
               <div fxLayout="column" fxLayoutGap="10px">
-                <span><strong>Total Budget</strong></span>
-                <span><strong>Rs. </strong>{{staticData.totalBudget}}</span>
+                <span><strong>Total number of category </strong></span>
+                <span><strong></strong>{{staticData.categoryList.length}}</span>
               </div>
               <div fxLayout="column" fxLayoutGap="5px">
-                <span><strong>Total Expenses</strong></span>
-                <span><strong>Rs. </strong>{{staticData.totalExpenses}}</span>
+                <span><strong>Frequently used category</strong></span>
+                <span><strong></strong>4</span>
               </div>
               <div fxLayout="column" fxLayoutGap="5px">
-                <span><strong>Current Balance</strong></span>
-                <span><strong>Rs. </strong>{{currentBalance}}</span>
+                <span>click the progress to see progress of category</span>
               </div>
             </div>
           </div>
@@ -56,7 +62,8 @@
     </div>
   </div>
   <div>
-    <button mat-raised-button class="background-white button-padding-width" (click)="addExpenses()"><i class="material-icons">add</i>Add Expenses</button>
+    <button mat-raised-button class="background-white button-padding-width" (click)="addExpenses()"><i
+        class="material-icons">add</i>Add Expenses</button>
   </div>
   <!-- EXPENSE DETAILS -->
   <div>
@@ -70,9 +77,9 @@
 
       <!-- Position Column -->
       <ng-container matColumnDef="category">
-          <th mat-header-cell *matHeaderCellDef> Category </th>
-          <td mat-cell *matCellDef="let element"> {{element.category}} </td>
-        </ng-container>
+        <th mat-header-cell *matHeaderCellDef> Category </th>
+        <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+      </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="itemName">
@@ -94,11 +101,13 @@
 
       <ng-container matColumnDef="deleteIcon">
         <th mat-header-cell *matHeaderCellDef> Edit {{deleteExpense}} </th>
-        <td mat-cell *matCellDef="let element; let i = index;"><i class="material-icons cursor-pointer" style="color: red" (click)="delete(i)">delete</i></td>
+        <td mat-cell *matCellDef="let element; let i = index;"><i class="material-icons cursor-pointer"
+            style="color: red" (click)="delete(i)">delete</i></td>
       </ng-container>
-      
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row class="expense-table-row" [ngClass]="{ 'strikethrough': deleteExpense == 'delete' }" *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row class="expense-table-row" [ngClass]="{ 'strikethrough': deleteExpense == 'delete' }"
+        *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
     <mat-paginator [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons></mat-paginator>
