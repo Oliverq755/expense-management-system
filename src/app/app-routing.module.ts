@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ExpenseSettingComponent } from './components/expense-setting/expense-setting.component';
 
 const routes: Routes = [
   { 
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent
+      },
+      {
+        path: 'expense-setting',
+        component: ExpenseSettingComponent
       }
     ]
   },

@@ -1,0 +1,48 @@
+<div fxLayout="column" fxLayoutGap="2em">
+  <fieldset>
+    <legend class="primary-font-color">Budget Settings:</legend>
+    <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxFlex="55" fxLayout="column" fxLayoutGap="2em">
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1em">
+          <mat-label class="primary-font-color">Total Budget</mat-label>
+          <mat-form-field appearance="outline" class="custom-input-field">
+            <input matInput placeholder="Total Budget">
+          </mat-form-field>
+          <button mat-raised-button class="background-white button-padding-width" (click)="addExpenses()">
+            <i class="material-icons">monetization_on</i>Update Budget</button>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1em">
+          <mat-label class="primary-font-color">Total Budget</mat-label>
+          <mat-form-field appearance="outline" class="custom-input-field">
+            <input matInput placeholder="Add new category">
+          </mat-form-field>
+          <button mat-raised-button class="background-white button-padding-width" (click)="addExpenses()">
+            <i class="material-icons">add</i>Category</button>
+        </div>
+      </div>
+      <mat-card fxFlex="35" fxLayoutAlign="center center">
+        <div fxLayout="column" class="primary-font-color" fxLayoutGap="2em">
+          <div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="1em">
+            <h2>Total Budget:</h2>
+            <h3>Rs. {{staticData.totalBudget}}</h3>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="1em">
+            <h2>Total Expense:</h2>
+            <h3>Rs. {{staticData.totalBudget}}</h3>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </fieldset>
+  <div fxLayout="row" fxLayoutAlign="center center">
+      <mat-card fxFlex="50">
+        <h3 class="primary-font-color" align="center">Category Lists</h3>
+        <mat-divider></mat-divider>
+          <mat-selection-list fxLayout="column" fxLayoutAlign="space-between stretch">
+              <mat-list-option *ngFor="let category of staticData.categoryList">
+                {{category.categoryName}}
+              </mat-list-option>
+            </mat-selection-list>
+        </mat-card>
+  </div>
+</div>

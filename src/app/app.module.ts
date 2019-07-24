@@ -35,20 +35,23 @@ import {
   MatTreeModule,
   MatFormFieldModule
 } from '@angular/material';
-import { FormsModule, ReactiveFormsModule }         from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddexpensesComponent } from './components/addexpenses/addexpenses.component';
+import { from } from 'rxjs';
+import { ExpenseSettingComponent } from './components/expense-setting/expense-setting.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainpageComponent,
     DashboardComponent,
-    AddexpensesComponent
+    AddexpensesComponent,
+    ExpenseSettingComponent
   ],
   imports: [
     BrowserModule,

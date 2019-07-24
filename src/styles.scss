@@ -70,3 +70,10 @@ table {
 .primary-font-color{
     color: #4e5a6e
 }
+
+//overwritting the material class of input component
+.custom-input-field{
+    .mat-form-field-wrapper {
+         padding-bottom: 0px;
+    }
+}

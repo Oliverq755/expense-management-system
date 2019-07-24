@@ -27,4 +27,8 @@ export class MainpageComponent implements OnInit {
     this.router.navigate(['home/dashboard']);
   }
 
+  routeExpenseSetting(){
+    this.router.navigate(['home/expense-setting']);
+  }
+
 }

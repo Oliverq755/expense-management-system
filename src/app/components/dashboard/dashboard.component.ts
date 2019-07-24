@@ -10,8 +10,6 @@ import { AddexpensesComponent } from '../addexpenses/addexpenses.component';
 })
 export class DashboardComponent implements OnInit {
 
-  totalBudget = 4560394;
-  totalExpenses = 2343554;
   currentBalance;
   displayedColumns = ['editIcon', 'category', 'itemName', 'amount', 'expenseDate'];
   dataSource;
@@ -24,7 +22,7 @@ export class DashboardComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.currentBalance = this.totalBudget - this.totalExpenses;
+    this.currentBalance = this.staticData.totalBudget - this.staticData.totalExpenses;
     this.dataSource = new MatTableDataSource(this.staticData.expenseDetails);
     this.dataSource.paginator = this.paginator;
   }

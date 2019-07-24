@@ -21,6 +21,18 @@ export class StaticdataService {
     {category:'Travel',itemName:'Bus fare',amount:4500,expenseDate:'9/12/2019'},
     {category:'Travel',itemName:'Bus fare',amount:4500,expenseDate:'9/12/2019'},
     {category:'Travel',itemName:'Bus fare',amount:4500,expenseDate:'9/12/2019'}
+  ];
+
+  totalBudget = 4560394;
+  totalExpenses = 2343554;
+
+  categoryList = [
+    {categoryID: 'CAT12', categoryName:'Food'},
+    {categoryID: 'CAT11', categoryName:'Grocery'},
+    {categoryID: 'CAT13', categoryName:'Cloths'},
+    {categoryID: 'CAT14', categoryName:'Rents'},
+    {categoryID: 'CAT15', categoryName:'Travel'},
+    {categoryID: 'CAT16', categoryName:'Loan'}
   ]
 
   constructor() { }

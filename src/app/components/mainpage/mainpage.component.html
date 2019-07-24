@@ -11,7 +11,7 @@
     <mat-sidenav class="padding-1em box-shadow home-toolbar" opened='true' #sidenav mode="side">
       <div fxLayout="column" fxLayoutGap="1em">
         <button mat-stroked-button [disableRipple]="true" class="menu-buttons" (click)="routeDashboardPage()"><i class="material-icons menu-icons">home</i>Home</button>
-        <button mat-stroked-button [disableRipple]="true" class="menu-buttons"><i class="material-icons menu-icons">settings</i>Setting</button>
+        <button mat-stroked-button [disableRipple]="true" class="menu-buttons" (click)="routeExpenseSetting()"><i class="material-icons menu-icons">settings</i>Setting</button>
         <button mat-stroked-button [disableRipple]="true" class="menu-buttons"><i class="material-icons menu-icons">person</i>Profile</button>
       </div>
     </mat-sidenav>
