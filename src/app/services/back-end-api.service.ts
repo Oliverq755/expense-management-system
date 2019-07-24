@@ -18,9 +18,20 @@ export class BackEndApiService {
     return new Promise((resolve, reject) => {
       this.http.get(`${this.baseUrl}/expense`).subscribe(result => {
         this.staticData.expenseDetails = result;
-        return resolve(result);
+        return resolve(this.staticData.expenseDetails);
       }, error => {
         return reject(error);
+      });
+    });
+  }
+
+  addExpenses(expense) {
+    return new Promise((resolve, reject) => {
+      this.http.post(`${this.baseUrl}/expense`, expense).subscribe(result => {
+        this.staticData.expenseDetails.push(expense);
+        return resolve(expense);
+      }, error => {
+        return reject();
       });
     });
   }

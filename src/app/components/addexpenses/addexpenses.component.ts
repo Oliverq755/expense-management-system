@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { BackEndApiService } from 'src/app/services/back-end-api.service';
 
 @Component({
   selector: 'app-addexpenses',
@@ -12,6 +13,7 @@ export class AddexpensesComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private backEndAPI: BackEndApiService
   ) { 
     this.addNewExpensesData();
   }
@@ -30,8 +32,8 @@ export class AddexpensesComponent implements OnInit {
     this.addExpenseForm = this.formBuilder.group(formObj);
   }
 
-  addExpenses(addExpenseForm){
-    console.log(addExpenseForm)
+  addNewExpenses(expense){
+    this.backEndAPI.addExpenses(expense.value);
   }
 
 }
