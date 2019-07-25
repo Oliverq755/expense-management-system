@@ -2,7 +2,7 @@
 
 This project is created to show the details of personal expense. It uses the following features:
 
-##Features
+## Features
 - Add total budget amount
 - Add New expense
 - Showing remaing budget balance
@@ -10,20 +10,20 @@ This project is created to show the details of personal expense. It uses the fol
 - Edit or delete expense
 - Modify the budget
 
-##Prerequisite
+## Prerequisite
 - Mongodb
 - Angular CLI
 - NODE JS
 - NODEMON
 - Any OS (Prefer UBUNTU)
 
-##Executing Procedure
+## Executing Procedure
 This project consist of two different part:
 - Angular Project (FRONT END)
 - Node JS Project (BACK END API)
 
 Here are the detailed procedure for individuals:
-###Development Angular Project
+### Development Angular Project
 Clone this projec to your local system and navigate to the root folder of the project and run the following commands in sequence:
 1. `npm install`
 2. `ng serve  OR ng serve --open`
@@ -38,6 +38,6 @@ After cloning this project, in this folder there is **`EMS-server`** folder whic
 
 **NOTE**: You can put the **EMS-server** folder outside also and perform above commands, it still works. 
 
-##IMPORTANT GLANCE
+## IMPORTANT GLANCE
 - Default mongodb database will be created with name **EMS-rt**
 - After calling **add expense** api, change the route and see the result, since the result are not instance of subjectbehaviour.
