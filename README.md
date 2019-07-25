@@ -1,30 +1,43 @@
 # ExpenseManagementSystem
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+This project is created to show the details of personal expense. It uses the following features:
 
-## Development server
+##Features
+- Add total budget amount
+- Add New expense
+- Showing remaing budget balance
+- Adding category of the expense
+- Edit or delete expense
+- Modify the budget
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##Prerequisite
+- Mongodb
+- Angular CLI
+- NODE JS
+- NODEMON
+- Any OS (Prefer UBUNTU)
 
-## Code scaffolding
+##Executing Procedure
+This project consist of two different part:
+- Angular Project (FRONT END)
+- Node JS Project (BACK END API)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Here are the detailed procedure for individuals:
+###Development Angular Project
+Clone this projec to your local system and navigate to the root folder of the project and run the following commands in sequence:
+1. `npm install`
+2. `ng serve  OR ng serve --open`
 
-## Build
+Now, navigate to `http://localhost:4200/`. The app will automatically load
+ 
+### Development NODE JS server
+After cloning this project, in this folder there is **`EMS-server`** folder which is **NODE JS** project. Naviate to that root folder in your terminal and perform these commands in sequence:
+1. `npm install`
+2. `sudo service mongodb start` (To start mongodb in ubuntu if not started)
+2. `nodemon server.js OR node server.js`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**NOTE**: You can put the **EMS-server** folder outside also and perform above commands, it still works. 
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-
-over
+##IMPORTANT GLANCE
+- Default mongodb database will be created with name **EMS-rt**
+- After calling **add expense** api, change the route and see the result, since the result are not instance of subjectbehaviour.
