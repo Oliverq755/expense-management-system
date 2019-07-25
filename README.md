@@ -33,7 +33,7 @@ Now, navigate to `http://localhost:4200/`. The app will automatically load
 ### Development NODE JS server
 After cloning this project, in this folder there is **`EMS-server`** zipped folder which is **NODE JS** project.
 
-Extract the folder to your desired location and naviate to that root folder in your terminal and perform these commands in sequence:
+**Extract the folder** to your desired location and naviate to that root folder in your terminal and perform these commands in sequence:
 1. `npm install`
 2. `sudo service mongodb start` (To start mongodb in ubuntu if not started)
 2. `nodemon server.js OR node server.js`
