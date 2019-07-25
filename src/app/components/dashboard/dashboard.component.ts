@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   displayedColumns = ['editIcon', 'category', 'itemName', 'amount', 'expenseDate', 'deleteIcon'];
   dataSource;
   deleteExpense;
+  selectedIndex;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
@@ -38,6 +39,8 @@ export class DashboardComponent implements OnInit {
   }
 
   delete(index){
+    console.log(index);
+    this.selectedIndex  = index;
     if(this.deleteExpense == 'delete'){
       this.deleteExpense = 'restore';
     } else {
